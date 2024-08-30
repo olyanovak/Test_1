@@ -2,22 +2,21 @@ import pytest
 from playwright.sync_api import Page, sync_playwright, Browser
 
 from base.pages.practice_form.practice_form_page import PracticeFormPage
-from src import config
+from src.config.playwright import PlaywrightConfig
 
 @pytest.fixture()
 def page() -> Page:
     with sync_playwright() as playwright:
         browser = get_browser(playwright)
-        page = browser.new_page()
+        page = browser.new_page(viewport=PlaywrightConfig.PAGE_VIEWPORT_SIZE)
         yield page
         browser.close()
 
-
 def get_browser(playwright) -> Browser:
-    browser_type = playwright.chromium if config.playwright.BROWSER == 'chrome' else playwright.firefox
+    browser_type = playwright.chromium if PlaywrightConfig.BROWSER == 'chrome' else playwright.firefox
     return browser_type.launch(
-        headless=config.playwright.IS_HEADLESS,
-        slow_mo=config.playwright.SLOW_MO
+        headless=PlaywrightConfig.IS_HEADLESS,
+        slow_mo=PlaywrightConfig.SLOW_MO
     )
 
 
