@@ -11,10 +11,11 @@ class PracticeStart:
     def practice_form(page: Page, practice_form: PracticeFormPage):
         errors = []
         try:
-            AuthorizationMethod.auth_practice_form(page)
+            with allure.step("Открытие страницы"):
+                AuthorizationMethod.auth_practice_form(page)
 
             with allure.step("Ввод данных пользователя"):
-                PracticeFormMethods.fill_name_input(practice_form)
+                PracticeFormMethods.fill_info_user_input(practice_form)
 
         except AssertionError as e:
             errors.append(str(e))
