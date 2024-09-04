@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Page, sync_playwright, Browser
 
 from base.pages.practice_form.practice_form_page import PracticeFormPage
+from base.pages.text_box.text_box_page import TextBoxPage
 from src.config.playwright import PlaywrightConfig
 
 @pytest.fixture()
@@ -23,3 +24,7 @@ def get_browser(playwright) -> Browser:
 @pytest.fixture(scope='function')
 def practice_form(page: Page) -> PracticeFormPage:
     return PracticeFormPage(page)
+
+@pytest.fixture(scope='function')
+def text_box(page: Page) -> TextBoxPage:
+    return TextBoxPage(page)

@@ -9,3 +9,6 @@ class AuthorizationMethod:
     @staticmethod
     def auth_practice_form(page: Page):
         BasePage.open_page(page, Url.AUTOMATION_PRACTICE_FORM)
+
+    def auth_text_box(page: Page):
+        BasePage.open_page(page, Url.TEXT_BOX)
