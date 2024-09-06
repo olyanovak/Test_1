@@ -1,8 +1,4 @@
-import time
-from os import path
-
 import allure
-import page
 
 from base.pages.text_box.text_box_page import TextBoxPage
 from src.config.expectations import Wait
@@ -16,6 +12,7 @@ class TextBoxMethods:
         Wait.set_page(text_box.page)
         try:
             with allure.step("Ввод ФИО"):
+                Wait.visible(text_box.Wait_full_name)
                 text_box.full_name.fill(text_box.full_name_text)
 
         except AssertionError as e:
@@ -27,6 +24,7 @@ class TextBoxMethods:
         Wait.set_page(text_box.page)
         try:
             with allure.step("Ввод Email"):
+                Wait.visible(text_box.Wait_email)
                 text_box.email.fill(text_box.email_text)
 
         except AssertionError as e:
@@ -38,6 +36,7 @@ class TextBoxMethods:
         Wait.set_page(text_box.page)
         try:
             with allure.step("Ввод текущего адреса"):
+                Wait.visible(text_box.Wait_current_address)
                 text_box.current_address.fill_text(text_box.current_address_text)
 
         except AssertionError as e:
@@ -49,6 +48,7 @@ class TextBoxMethods:
         Wait.set_page(text_box.page)
         try:
             with allure.step("Ввод постоянного адреса"):
+                Wait.visible(text_box.Wait_permanent_address)
                 text_box.permanent_address.fill_text(text_box.permanent_address_text)
 
         except AssertionError as e:
@@ -60,6 +60,7 @@ class TextBoxMethods:
         Wait.set_page(text_box.page)
         try:
             with allure.step("Отправка данных"):
+                Wait.visible(text_box.Wait_submit)
                 text_box.submit.click()
 
         except AssertionError as e:

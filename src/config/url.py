@@ -5,7 +5,6 @@ class Url:
     TEXT_BOX = DOMAIN + 'text-box'
     CHECKBOX = DOMAIN + 'checkbox'
     RADIO_BUTTON = DOMAIN + 'radio-button'
-    WEBTABLES = DOMAIN + 'webtables'
     BUTTONS = DOMAIN + 'buttons'
     LINKS = DOMAIN + 'links'
     BROKEN = DOMAIN + 'broken'

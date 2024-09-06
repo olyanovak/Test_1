@@ -4,8 +4,6 @@ from os import path
 import allure
 
 from base.pages.practice_form.practice_form_page import PracticeFormPage
-
-
 # from src.config.expectations import Wait
 
 

@@ -8,7 +8,7 @@ from conftest import practice_form
 
 class TestPractice:
 
-    @allure.epic("Тесты потока 1")
+    @allure.epic("Дипломная работа")
     @allure.feature("Practice Form")
     @allure.title("Заполнение формы регистрации пользователя")
     def test_practice_form(self, page: Page, practice_form: PracticeFormPage):
