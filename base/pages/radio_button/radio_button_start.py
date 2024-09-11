@@ -2,7 +2,7 @@ import allure
 from playwright.sync_api import Page
 
 from base.pages.authorization.authorization_method import AuthorizationMethod
-from base.pages.radio_button.radio_button_methods import RadioButtonPage
+from base.pages.radio_button.radio_button_page import RadioButtonPage
 from base.pages.radio_button.radio_button_methods import RadioButtonMethods
 
 
@@ -17,8 +17,17 @@ class RadioButtonStart:
             with allure.step("Нажатие на радио кнопку 'Yes'"):
                 RadioButtonMethods.click_yes_radio(radio_button)
 
+            with allure.step("Скриншот результата нажатия кнопки 'Yes'"):
+                RadioButtonMethods.screen_radio_button(radio_button)
+
             with allure.step("Нажатие на радио кнопку 'Impressive'"):
                 RadioButtonMethods.click_impressive_radio(radio_button)
+
+            with allure.step("Скриншот результата нажатия кнопки 'Impressive'"):
+                RadioButtonMethods.screen_radio_button(radio_button)
+
+            with allure.step("Проверка неактивности радио кнопки 'No'"):
+                RadioButtonMethods.click_no_radio(radio_button)
 
         except AssertionError as e:
             errors.append(str(e))

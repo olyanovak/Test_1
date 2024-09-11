@@ -65,3 +65,16 @@ class TextBoxMethods:
 
         except AssertionError as e:
             errors.append(str(e))
+
+    @staticmethod
+    def screen_text_box(text_box: TextBoxPage):
+        errors = []
+        try:
+            with allure.step("Скриншот страницы Text Box"):
+                screenshot_path = f"screenshots/text_box_screen.png"
+                text_box.page.screenshot(path=screenshot_path)
+                allure.attach.file(screenshot_path, name='Заполнение полей и отправка данных',
+                                   attachment_type=allure.attachment_type.PNG)
+
+        except AssertionError as e:
+            errors.append(str(e))

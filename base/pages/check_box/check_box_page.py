@@ -7,13 +7,13 @@ class CheckBoxPage:
         self.page = page
 
         """Локаторы страницы: Флажок"""
-        self.arrow_one = page.locator('(//*[starts-with(@aria-label, "Toggle")])[1]')
-        self.arrow_two= page.locator('(//*[starts-with(@aria-label, "Toggle")])[2]')
-        self.arrow_three = page.locator('(//*[starts-with(@aria-label, "Toggle")])[3]')
-        self.arrow_four = page.locator('(//*[starts-with(@aria-label, "Toggle")])[4]')
-        self.arrow_five = page.locator('(//*[starts-with(@aria-label, "Toggle")])[5]')
-        self.arrow_six = page.locator('(//*[starts-with(@aria-label, "Toggle")])[6]')
-        self.check_box_home = Button(page, locator='//*[@for="tree-node-home"]', name='Флажок папки Home')
+        self.arrow_one = page.locator('(//*[starts-with(@aria-label, "Toggle")])')
+        self.arrow_two= page.locator('(//*[starts-with(@aria-label, "Toggle")])')
+        self.arrow_three = page.locator('(//*[starts-with(@aria-label, "Toggle")])')
+        self.arrow_four = page.locator('(//*[starts-with(@aria-label, "Toggle")])')
+        self.arrow_five = page.locator('(//*[starts-with(@aria-label, "Toggle")])')
+        self.arrow_six = page.locator('(//*[starts-with(@aria-label, "Toggle")])')
+        self.check_box_home = Button(page, locator='//*[@for="tree-node-home"]', name='Папка Home')
 
         """Ожидания"""
         self.Wait_arrow_one = '(//*[starts-with(@aria-label, "Toggle")])[1]'

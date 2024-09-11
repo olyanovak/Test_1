@@ -2,7 +2,7 @@ import allure
 from playwright.sync_api import Page
 
 from base.pages.authorization.authorization_method import AuthorizationMethod
-from base.pages.check_box.check_box_methods import CheckBoxPage
+from base.pages.check_box.check_box_page import CheckBoxPage
 from base.pages.check_box.check_box_methods import CheckBoxMethods
 
 
@@ -34,6 +34,9 @@ class CheckBoxStart:
 
             with allure.step("Нажатие на флажок папки Home"):
                 CheckBoxMethods.click_check_box_home(check_box)
+
+            with allure.step("Скриншот результата теста"):
+                CheckBoxMethods.screen_check_box(check_box)
 
         except AssertionError as e:
             errors.append(str(e))

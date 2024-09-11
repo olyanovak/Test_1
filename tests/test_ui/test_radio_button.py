@@ -8,7 +8,7 @@ from conftest import radio_button
 
 class TestRadioButton:
 
-    @allure.epic("Дипломная работа")
+    @allure.epic("UI")
     @allure.feature("Radio Button")
     @allure.title("Нажатие на радио кнопки")
     def test_radio_button(self, page: Page, radio_button: RadioButtonPage):

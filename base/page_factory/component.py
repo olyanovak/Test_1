@@ -28,6 +28,15 @@ class Component(ABC):
             locator = self.get_locator(**kwargs)
             locator.click()
 
+    def r_click(self, **kwargs) -> None:
+        """
+        Нажимает на элемент компонента правой кнопкой.
+        """
+        with allure.step(f'Нажимаем на {self.type_of} с именем "{self.name}"'):
+            self.should_be_visible()
+            locator = self.get_locator(**kwargs)
+            locator.click(button="right")
+
     def focus(self, **kwargs) -> None:
         """
         Устанавливает фокус на элемент компонента.

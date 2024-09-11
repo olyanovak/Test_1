@@ -2,7 +2,7 @@ import allure
 from playwright.sync_api import Page
 
 from base.pages.authorization.authorization_method import AuthorizationMethod
-from base.pages.text_box.text_box_methods import TextBoxPage
+from base.pages.text_box.text_box_page import TextBoxPage
 from base.pages.text_box.text_box_methods import TextBoxMethods
 
 
@@ -28,6 +28,9 @@ class TextBoxStart:
 
             with allure.step("Отправка данных"):
                 TextBoxMethods.click_submit(text_box)
+
+            with allure.step("Скриншот результата теста"):
+                TextBoxMethods.screen_text_box(text_box)
 
         except AssertionError as e:
             errors.append(str(e))

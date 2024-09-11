@@ -8,7 +8,7 @@ from conftest import text_box
 
 class TestTextBox:
 
-    @allure.epic("Дипломная работа")
+    @allure.epic("UI")
     @allure.feature("Text Box")
     @allure.title("Заполнение текстовых полей")
     def test_text_box(self, page: Page, text_box: TextBoxPage):

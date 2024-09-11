@@ -8,7 +8,7 @@ from conftest import check_box
 
 class TestCheckBox:
 
-    @allure.epic("Дипломная работа")
+    @allure.epic("UI")
     @allure.feature("Check Box")
     @allure.title("Проставление флага")
     def test_check_box(self, page: Page, check_box: CheckBoxPage):
